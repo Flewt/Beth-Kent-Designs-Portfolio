@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Beth Kent</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div id="transition-overlay" aria-hidden="true"></div>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="Home">Beth<span>.</span>Kent</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">Menu</button>
+    <ul class="nav-links" id="nav-menu" role="list">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-content" id="main-content">
+    <div class="section">
+
+      <p class="section-label">The designer</p>
+      <h1 class="section-title">About Me</h1>
+      <div class="page-rule" aria-hidden="true">
+        <span class="rule-line"></span>
+        <span class="rule-gems">✦&nbsp;✧&nbsp;✦</span>
+        <span class="rule-line"></span>
+      </div>
+
+      <div class="about-grid">
+
+        <!-- LEFT: portrait + name -->
+        <div class="about-portrait reveal">
+          <!--
+            Replace with your photo:
+            <img class="about-portrait-img" src="images/portrait.jpg" alt="Your Name" style="display:block;" />
+          -->
+          <div class="about-portrait-img" role="img" aria-label="Your portrait photo">
+            [ Your Photo ]
+          </div>
+          <h2 class="about-name">Your Name</h2>
+          <p class="about-role">UX / UI Designer · City, Country</p>
+          <a href="resume.pdf" class="btn btn-ghost" download aria-label="Download resume PDF">↓ Download Resume</a>
+        </div>
+
+        <!-- RIGHT: bio + skills -->
+        <div class="about-text">
+
+          <div class="about-bio reveal">
+            <p>
+              <!-- EDIT PARAGRAPH 1: origin story / background -->
+              A bit about who you are. Where you come from, how you found your way into design, and what genuinely drives you to do this work every day.
+            </p>
+            <p>
+              <!-- EDIT PARAGRAPH 2: design philosophy / approach -->
+              Your philosophy or approach to design. How you think about problems, what you obsess over, what you believe makes great design — in your own words.
+            </p>
+            <p>
+              <!-- EDIT PARAGRAPH 3: outside work — keeps you human -->
+              When you're not designing, you can find me... (hobbies, interests, what feeds your creativity outside of work).
+            </p>
+          </div>
+
+          <div class="about-skills" aria-label="Skills">
+
+            <div class="stat-bar reveal">
+              <div class="stat-bar-header"><span>Figma / Prototyping</span></div>
+              <div class="stat-bar-track" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="Figma / Prototyping 92%">
+                <div class="stat-bar-fill" data-width="92%" style="width:0%"></div>
+              </div>
+            </div>
+
+            <div class="stat-bar reveal">
+              <div class="stat-bar-header"><span>User Research</span></div>
+              <div class="stat-bar-track" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="User Research 88%">
+                <div class="stat-bar-fill lavender" data-width="88%" style="width:0%"></div>
+              </div>
+            </div>
+
+            <div class="stat-bar reveal">
+              <div class="stat-bar-header"><span>Design Systems</span></div>
+              <div class="stat-bar-track" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" aria-label="Design Systems 82%">
+                <div class="stat-bar-fill pale" data-width="82%" style="width:0%"></div>
+              </div>
+            </div>
+
+            <div class="stat-bar reveal">
+              <div class="stat-bar-header"><span>HTML / CSS</span></div>
+              <div class="stat-bar-track" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="HTML / CSS 70%">
+                <div class="stat-bar-fill" data-width="70%" style="width:0%"></div>
+              </div>
+            </div>
+
+            <!-- Add more stat bars as needed — copy a block above -->
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> <span>Beth Kent</span></p>
+    <p>UX / UI Designer</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

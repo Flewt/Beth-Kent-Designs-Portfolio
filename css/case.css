@@ -1,0 +1,757 @@
+/* ═══════════════════════════════════════════════
+   CASE STUDY STYLES
+   Extends style.css — do not import fonts/tokens here
+═══════════════════════════════════════════════ */
+
+/* ── CASE HERO ──────────────────────────────── */
+.case-hero {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--deep);
+}
+
+.case-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.45;
+  display: block;
+}
+
+.case-hero-placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--deep) 0%, var(--midnight) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+.case-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 2.5rem 3rem;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  /* gradient scrim so text is always readable */
+  background: linear-gradient(to top, rgba(21,14,34,0.95) 0%, transparent 100%);
+}
+
+.case-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  list-style: none;
+}
+
+.case-title {
+  font-size: clamp(32px, 5.5vw, 64px);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  max-width: 800px;
+}
+
+.case-tagline {
+  font-family: var(--font-body);
+  font-size: 20px;
+  color: var(--light);
+  max-width: 620px;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.case-scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  animation: hint-fade 2s ease-in-out infinite alternate;
+}
+
+.case-scroll-hint::before {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 28px;
+  background: var(--mid);
+  opacity: 0.6;
+  /* No height animation — static bar prevents layout shift */
+}
+
+/* ── TOC (sticky sidebar on wide screens) ───── */
+.case-toc {
+  position: sticky;
+  top: 80px;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 2px solid var(--surface2);
+  box-shadow: 6px 6px 0 var(--surface2);
+  min-width: 180px;
+}
+
+.case-toc-title {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 1rem;
+}
+
+.case-toc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.case-toc-list a {
+  font-family: var(--font-body);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--light);
+  padding: 0.4rem 0;
+  border-left: 2px solid transparent;
+  padding-left: 0.85rem;
+  display: block;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.case-toc-list a:hover,
+.case-toc-list a.toc-active {
+  color: var(--pale);
+  border-left-color: var(--mid);
+}
+
+/* ── CASE LAYOUT ────────────────────────────── */
+.case-layout {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem;
+  align-items: start;
+}
+
+/* ── OVERVIEW METADATA ──────────────────────── */
+.case-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+  padding: 2.5rem;
+  background: var(--surface);
+  border: 2px solid var(--surface2);
+  box-shadow: 6px 6px 0 var(--surface2);
+}
+
+.case-meta-item {}
+
+.case-meta-label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 0.5rem;
+}
+
+.case-meta-value {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--pale);
+  line-height: 1.6;
+}
+
+/* ── CASE SECTION ───────────────────────────── */
+.case-section {
+  padding: 4.5rem 0;
+  border-top: 2px solid var(--surface2);
+  scroll-margin-top: 80px;
+}
+
+.case-section:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.case-section-label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.case-section-label::before {
+  content: '[';
+  font-family: var(--font-head);
+  font-size: 13px;
+  color: var(--mid);
+  opacity: 0.5;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  background: none;
+  line-height: 1;
+}
+
+.case-section-label::after {
+  content: ']';
+  font-family: var(--font-head);
+  font-size: 13px;
+  color: var(--mid);
+  opacity: 0.5;
+  line-height: 1;
+}
+
+.case-section-title {
+  font-size: clamp(26px, 3.5vw, 40px);
+  margin-bottom: 1.75rem;
+  animation: heading-glow 5s ease-in-out infinite;
+}
+
+.case-body {
+  font-size: 18px;
+  color: var(--light);
+  line-height: 1.8;
+  max-width: 720px;
+}
+
+.case-body p { margin-bottom: 1.5rem; }
+.case-body p:last-child { margin-bottom: 0; }
+
+/* ── CALLOUT / PROBLEM HIGHLIGHT ────────────── */
+.case-callout {
+  background: var(--surface);
+  border-left: 4px solid var(--coral);
+  padding: 2rem 2.25rem;
+  margin: 2.5rem 0;
+  box-shadow: 6px 6px 0 var(--surface2);
+}
+
+.case-callout p {
+  font-family: var(--font-head);
+  font-size: clamp(18px, 2.5vw, 24px);
+  color: var(--pale);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ── TWO-COL TEXT ───────────────────────────── */
+.case-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+  margin: 2rem 0;
+}
+
+.case-two-col h3 {
+  font-size: 18px;
+  margin-bottom: 0.75rem;
+  color: var(--pale);
+}
+
+.case-two-col p {
+  font-size: 16px;
+  color: var(--light);
+  line-height: 1.8;
+}
+
+/* Card variant — wraps each column in a pixel card */
+.case-two-col.case-two-col--cards > div {
+  background: var(--surface);
+  border: 2px solid var(--surface2);
+  box-shadow: 6px 6px 0 var(--surface2);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.case-two-col.case-two-col--cards h3 {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-family: var(--font-body);
+  font-weight: normal;
+  margin-bottom: 0.25rem;
+}
+
+.case-two-col.case-two-col--cards p {
+  font-size: 16px;
+  color: var(--light);
+  line-height: 1.8;
+  margin-top: 0;
+}
+
+/* ── IMAGE BLOCKS ───────────────────────────── */
+.case-img-full {
+  width: 100%;
+  border: 2px solid var(--surface2);
+  box-shadow: 8px 8px 0 var(--surface2);
+  display: block;
+  margin: 2.5rem 0;
+  background: var(--surface);
+}
+
+.case-img-caption {
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--mid);
+  text-align: center;
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+}
+
+.case-img-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.case-img-grid img,
+.case-img-grid .case-img-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 2px solid var(--surface2);
+  box-shadow: 4px 4px 0 var(--surface2);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+/* ── INSIGHT CARDS ──────────────────────────── */
+.case-insights {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  margin: 2.5rem 0;
+}
+
+.case-insight-card {
+  background: var(--surface);
+  border: 2px solid var(--surface2);
+  box-shadow: 5px 5px 0 var(--surface2);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+
+.case-insight-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--mid);
+  border-color: var(--mid);
+}
+
+.case-insight-icon {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.case-insight-title {
+  font-family: var(--font-head);
+  font-size: 17px;
+  color: var(--pale);
+}
+
+.case-insight-text {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--light);
+  line-height: 1.7;
+}
+
+/* ── PERSONA CARDS ──────────────────────────── */
+.case-personas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+  margin: 2.5rem 0;
+}
+
+.case-persona {
+  background: var(--surface);
+  border: 2px solid var(--surface2);
+  box-shadow: 6px 6px 0 var(--surface2);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.case-persona-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 2px solid var(--surface2);
+}
+
+.case-persona-avatar {
+  width: 56px;
+  height: 56px;
+  background: var(--surface2);
+  border: 2px solid var(--mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.case-persona-name {
+  font-family: var(--font-head);
+  font-size: 18px;
+  margin-bottom: 0.15rem;
+}
+
+.case-persona-role {
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+.case-persona-body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--light);
+  line-height: 1.7;
+}
+
+/* ── QUOTE ──────────────────────────────────── */
+.case-quote {
+  margin: 3rem 0;
+  padding: 2.5rem 3rem;
+  background: var(--surface);
+  border: 2px solid var(--surface2);
+  box-shadow: 6px 6px 0 var(--surface2);
+  position: relative;
+}
+
+.case-quote::before {
+  content: '"';
+  position: absolute;
+  top: -0.25rem;
+  left: 1.5rem;
+  font-family: var(--font-head);
+  font-size: 80px;
+  color: var(--mid);
+  line-height: 1;
+  opacity: 0.4;
+}
+
+.case-quote blockquote {
+  font-family: var(--font-body);
+  font-size: 20px;
+  color: var(--pale);
+  line-height: 1.65;
+  font-style: italic;
+  margin-bottom: 0.85rem;
+}
+
+.case-quote cite {
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-style: normal;
+}
+
+/* ── PROCESS STEPS ──────────────────────────── */
+.case-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2.5rem 0;
+  counter-reset: step;
+}
+
+.case-step {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  counter-increment: step;
+}
+
+.case-step-num {
+  width: 52px;
+  height: 52px;
+  background: var(--surface);
+  border: 2px solid var(--mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-size: 17px;
+  color: var(--mid);
+  flex-shrink: 0;
+  box-shadow: 3px 3px 0 var(--surface2);
+}
+
+.case-step-num::before { content: counter(step, decimal-leading-zero); }
+
+.case-step-title {
+  font-family: var(--font-head);
+  font-size: 18px;
+  color: var(--pale);
+  margin-bottom: 0.45rem;
+}
+
+.case-step-text {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--light);
+  line-height: 1.75;
+}
+
+/* ── NEXT PROJECT CARD ──────────────────────── */
+.case-next {
+  margin-top: 1rem;
+  padding: 4rem 0 6rem;
+  border-top: 2px solid var(--surface2);
+}
+
+.case-next-label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.case-next-label::before {
+  content: '[';
+  font-family: var(--font-head);
+  font-size: 13px;
+  color: var(--mid);
+  opacity: 0.5;
+  display: inline-block;
+  width: auto; height: auto;
+  background: none;
+  line-height: 1;
+}
+
+.case-next-label::after {
+  content: ']';
+  font-family: var(--font-head);
+  font-size: 13px;
+  color: var(--mid);
+  opacity: 0.5;
+  line-height: 1;
+}
+
+.case-next-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: var(--surface);
+  border: 2px solid var(--surface2);
+  box-shadow: 8px 8px 0 var(--surface2);
+  padding: 2rem;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  max-width: 720px;
+}
+
+.case-next-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0 var(--coral);
+  border-color: var(--coral);
+}
+
+.case-next-thumb {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  background: var(--surface2);
+  border: 2px solid var(--surface2);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+.case-next-info {}
+
+.case-next-title {
+  font-family: var(--font-head);
+  font-size: 22px;
+  color: var(--pale);
+  margin-bottom: 0.4rem;
+}
+
+.case-next-desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--light);
+  line-height: 1.6;
+}
+
+.case-next-arrow {
+  font-size: 24px;
+  color: var(--coral);
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* ── NO PAGE-ENTER SLIDE on case pages ─────── */
+body.case-page .page-content {
+  animation: none;
+}
+
+/* ══════════════════════════════════════════════
+   LIVING SHADOWS — personality via drop shadows
+   Insight cards, persona cards, quote blocks,
+   the meta grid, and next-project card all get
+   a slow, breathing shadow animation.
+══════════════════════════════════════════════ */
+@keyframes shadow-breathe {
+  0%   { box-shadow: 5px 5px 0 var(--surface2); }
+  50%  { box-shadow: 8px 8px 0 var(--mid); }
+  100% { box-shadow: 5px 5px 0 var(--surface2); }
+}
+
+@keyframes shadow-breathe-lg {
+  0%   { box-shadow: 6px 6px 0 var(--surface2); }
+  50%  { box-shadow: 10px 10px 0 var(--mid); }
+  100% { box-shadow: 6px 6px 0 var(--surface2); }
+}
+
+@keyframes shadow-breathe-coral {
+  0%   { box-shadow: 8px 8px 0 var(--surface2); }
+  50%  { box-shadow: 12px 12px 0 var(--coral); }
+  100% { box-shadow: 8px 8px 0 var(--surface2); }
+}
+
+.case-insight-card {
+  animation: shadow-breathe 4s ease-in-out infinite;
+}
+/* Stagger each card so they don't pulse in unison */
+.case-insight-card:nth-child(2) { animation-delay: 1.3s; }
+.case-insight-card:nth-child(3) { animation-delay: 2.6s; }
+
+.case-persona {
+  animation: shadow-breathe 5s ease-in-out infinite;
+}
+.case-persona:nth-child(2) { animation-delay: 2s; }
+
+.case-quote {
+  animation: shadow-breathe-lg 6s ease-in-out infinite;
+}
+
+.case-meta-grid {
+  animation: shadow-breathe-lg 7s ease-in-out infinite;
+}
+
+.case-next-card {
+  animation: shadow-breathe-coral 5s ease-in-out infinite;
+}
+
+/* Pause all animations when the user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .case-insight-card,
+  .case-persona,
+  .case-quote,
+  .case-meta-grid,
+  .case-next-card {
+    animation: none;
+  }
+}
+
+/* ── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 860px) {
+  .case-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3rem 1.5rem;
+  }
+
+  .case-toc {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .case-toc-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .case-toc-list a {
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    padding-left: 0;
+    padding-bottom: 0.25rem;
+  }
+
+  .case-toc-list a:hover,
+  .case-toc-list a.toc-active {
+    border-left: none;
+    border-bottom-color: var(--mid);
+  }
+
+  .case-two-col { grid-template-columns: 1fr; gap: 1.5rem; }
+
+  .case-hero-content { padding: 3rem 1.5rem 2rem; }
+
+  .case-next-card { flex-wrap: wrap; }
+  .case-next-arrow { display: none; }
+}
+
+@media (max-width: 540px) {
+  .case-meta-grid { grid-template-columns: 1fr 1fr; }
+  .case-insights   { grid-template-columns: 1fr; }
+  .case-personas   { grid-template-columns: 1fr; }
+}

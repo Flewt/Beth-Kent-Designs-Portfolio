@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beth Kent — UX/UI Designer</title>
+  <meta name="description" content="Beth Kent — UX/UI Designer crafting playful, intuitive digital experiences." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body class="home-page">
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div id="transition-overlay" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="Home — Beth Kent Design">Beth<span>.</span>Kent</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">Menu</button>
+    <ul class="nav-links" id="nav-menu" role="list">
+      <li><a href="home.html" class="active">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-content" id="main-content">
+    <div class="home-stage">
+
+      <!-- CRT scanline overlay -->
+      <div class="scanlines" aria-hidden="true"></div>
+
+      <!-- Pixel corner brackets -->
+      <div class="corner corner--tl" aria-hidden="true"></div>
+      <div class="corner corner--tr" aria-hidden="true"></div>
+      <div class="corner corner--bl" aria-hidden="true"></div>
+      <div class="corner corner--br" aria-hidden="true"></div>
+
+      <!-- Left HUD panel — skills -->
+      <aside class="hud-panel hud-panel--left" aria-hidden="true">
+        <p class="hud-heading">✦ Skills</p>
+        <ul class="hud-skill-list">
+          <li>UX / UI Design</li>
+          <li>Research</li>
+          <li>User Testing</li>
+          <li>Branding</li>
+          <li>Figma</li>
+          <li>Adobe Suite</li>
+          <li>DaVinci Resolve</li>
+        </ul>
+      </aside>
+
+      <!-- Right HUD panel — info -->
+      <aside class="hud-panel hud-panel--right" aria-hidden="true">
+        <div class="hud-info-row">
+          <p class="hud-heading">Class</p>
+          <p class="hud-info-value">UX / UI Designer</p>
+        </div>
+        <div class="hud-info-row">
+          <p class="hud-heading">Spec</p>
+          <p class="hud-info-value">Emotional Design</p>
+        </div>
+        <div class="hud-info-row">
+          <p class="hud-heading">Location</p>
+          <p class="hud-info-value">Auckland, NZ</p>
+        </div>
+        <div class="hud-info-row">
+          <p class="hud-heading">Status</p>
+          <p class="hud-info-value hud-online">
+            <span class="status-dot"></span>Available
+          </p>
+        </div>
+      </aside>
+
+      <!-- ── MAIN FRAME ──────────────────────── -->
+      <div class="home-frame">
+
+        <p class="home-eyebrow" aria-hidden="true">
+          <span class="eyebrow-bracket">[</span>&thinsp;Level&nbsp;03&nbsp;&middot;&nbsp;UX/UI&nbsp;Designer&thinsp;<span class="eyebrow-bracket">]</span>
+        </p>
+
+        <h1 class="home-title" aria-label="Beth Kent">
+          <span class="title-first" aria-hidden="true">Beth</span>
+          <span class="title-last" aria-hidden="true">Kent<span class="title-dot">.</span></span>
+        </h1>
+
+        <div class="home-rule" aria-hidden="true">
+          <span class="rule-line"></span>
+          <span class="rule-gems">✦&nbsp;✧&nbsp;✦</span>
+          <span class="rule-line"></span>
+        </div>
+
+        <p class="home-tagline">
+          I design things people <em>love</em> to use.
+        </p>
+
+        <nav class="home-menu" aria-label="Quick navigation">
+          <a href="work.html" class="home-menu-item">
+            <span class="menu-arrow" aria-hidden="true">▶</span>
+            View my work
+          </a>
+          <a href="contact.html" class="home-menu-item">
+            <span class="menu-arrow" aria-hidden="true">▶</span>
+            Get in touch
+          </a>
+        </nav>
+
+        <p class="home-hint" aria-label="Move your cursor to create sparkles">
+          <span aria-hidden="true">✦</span>&ensp;move your cursor around&ensp;<span aria-hidden="true">✦</span>
+        </p>
+
+      </div><!-- /.home-frame -->
+
+    </div><!-- /.home-stage -->
+  </main>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

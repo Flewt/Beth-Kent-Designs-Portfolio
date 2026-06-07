@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><!-- PROJECT TITLE --> — Beth Kent</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/case.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div id="transition-overlay" aria-hidden="true"></div>
+
+  <!-- ── NAV ──────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="../index.html" class="nav-logo" aria-label="Home">Beth<span>.</span>Kent</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">Menu</button>
+    <ul class="nav-links" id="nav-menu" role="list">
+      <li><a href="../home.html">Home</a></li>
+      <li><a href="../work.html" class="active">Work</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-content" id="main-content">
+
+    <!-- ══════════════════════════════════════════
+         HERO
+    ══════════════════════════════════════════ -->
+    <section class="case-hero" aria-label="Project hero">
+      <!--
+        OPTION A — use a real image:
+        <img class="case-hero-img" src="../images/YOUR-IMAGE.jpg" alt="Brief description" />
+
+        OPTION B — leave the placeholder div:
+      -->
+      <div class="case-hero-placeholder" aria-hidden="true">[ Hero Image ]</div>
+
+      <div class="case-hero-content">
+        <ul class="case-hero-tags" aria-label="Project tags">
+          <li class="tag">UX Research</li>
+          <li class="tag">UI Design</li>
+          <!-- Add / change tags -->
+        </ul>
+
+        <h1 class="case-title"><!-- PROJECT TITLE --></h1>
+        <p class="case-tagline"><!-- One sentence — what the project was and why it mattered --></p>
+
+        <div class="case-scroll-hint" aria-hidden="true">Scroll to explore</div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         MAIN LAYOUT (TOC sidebar + content)
+    ══════════════════════════════════════════ -->
+    <div class="case-layout">
+
+      <!-- Sticky table of contents -->
+      <aside class="case-toc" aria-label="Table of contents">
+        <p class="case-toc-title">Contents</p>
+        <ul class="case-toc-list" role="list">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#ideation">Ideation</a></li>
+          <li><a href="#design">Design</a></li>
+          <li><a href="#reflection">Reflection</a></li>
+        </ul>
+      </aside>
+
+      <!-- Case study content -->
+      <article>
+
+        <!-- ── OVERVIEW ──────────────────────── -->
+        <section class="case-section" id="overview" aria-labelledby="overview-title">
+
+          <!-- Metadata chips -->
+          <div class="case-meta-grid" role="list" aria-label="Project metadata">
+            <div class="case-meta-item" role="listitem">
+              <p class="case-meta-label">My Role</p>
+              <p class="case-meta-value"><!-- e.g. UX Researcher, UI Designer --></p>
+            </div>
+            <div class="case-meta-item" role="listitem">
+              <p class="case-meta-label">Timeline</p>
+              <p class="case-meta-value"><!-- e.g. 8 Weeks --></p>
+            </div>
+            <div class="case-meta-item" role="listitem">
+              <p class="case-meta-label">Tools</p>
+              <p class="case-meta-value"><!-- e.g. Figma, Miro --></p>
+            </div>
+            <div class="case-meta-item" role="listitem">
+              <p class="case-meta-label">Team</p>
+              <p class="case-meta-value"><!-- e.g. Solo / 3 person team --></p>
+            </div>
+          </div>
+
+          <p class="case-section-label" aria-hidden="true">Overview</p>
+          <h2 class="case-section-title" id="overview-title">The Brief</h2>
+
+          <div class="case-body">
+            <p><!-- Context: what organisation/client, what was the starting point? --></p>
+          </div>
+
+          <!-- Problem + Challenge side by side -->
+          <div class="case-two-col" style="margin-top: 2.5rem;">
+            <div>
+              <h3>The Problem</h3>
+              <p><!-- What was broken, painful, or missing for users? --></p>
+            </div>
+            <div>
+              <h3>The Challenge</h3>
+              <p><!-- What made this hard to solve? Constraints, tensions, unknowns. --></p>
+            </div>
+          </div>
+
+          <!-- Highlight the core question -->
+          <div class="case-callout reveal">
+            <p>"<!-- HMW or core design question -->"</p>
+          </div>
+
+        </section>
+
+        <!-- ── RESEARCH ──────────────────────── -->
+        <section class="case-section" id="research" aria-labelledby="research-title">
+          <p class="case-section-label" aria-hidden="true">Research</p>
+          <h2 class="case-section-title" id="research-title">Understanding the Space</h2>
+
+          <div class="case-body">
+            <p><!-- Brief intro to your research approach --></p>
+          </div>
+
+          <!-- Key insights cards -->
+          <div class="case-insights" role="list" aria-label="Research insights">
+
+            <div class="case-insight-card reveal" role="listitem">
+              <div class="case-insight-icon" aria-hidden="true">🔍</div>
+              <p class="case-insight-title"><!-- Insight headline --></p>
+              <p class="case-insight-text"><!-- 1-2 sentences --></p>
+            </div>
+
+            <div class="case-insight-card reveal" role="listitem">
+              <div class="case-insight-icon" aria-hidden="true">💬</div>
+              <p class="case-insight-title"><!-- Insight headline --></p>
+              <p class="case-insight-text"><!-- 1-2 sentences --></p>
+            </div>
+
+            <div class="case-insight-card reveal" role="listitem">
+              <div class="case-insight-icon" aria-hidden="true">📊</div>
+              <p class="case-insight-title"><!-- Insight headline --></p>
+              <p class="case-insight-text"><!-- 1-2 sentences --></p>
+            </div>
+
+          </div>
+
+          <!-- Optional: a quote from a user interview -->
+          <div class="case-quote reveal">
+            <blockquote><!-- Quote text --></blockquote>
+            <cite><!-- Attribution, e.g. "Interview participant, age 34" --></cite>
+          </div>
+
+          <!-- Optional: a research image -->
+          <!--
+          <img class="case-img-full" src="../images/YOUR-IMAGE.jpg" alt="Description" />
+          <p class="case-img-caption">Caption text</p>
+          -->
+
+        </section>
+
+        <!-- ── IDEATION ──────────────────────── -->
+        <section class="case-section" id="ideation" aria-labelledby="ideation-title">
+          <p class="case-section-label" aria-hidden="true">Ideation</p>
+          <h2 class="case-section-title" id="ideation-title">Exploring Solutions</h2>
+
+          <div class="case-body">
+            <p><!-- What methods did you use to generate ideas? --></p>
+          </div>
+
+          <!-- Persona cards — duplicate/remove as needed -->
+          <div class="case-personas" role="list" aria-label="User personas">
+
+            <div class="case-persona reveal" role="listitem">
+              <div class="case-persona-header">
+                <div class="case-persona-avatar" aria-hidden="true">🧑</div>
+                <div>
+                  <p class="case-persona-name"><!-- Name --></p>
+                  <p class="case-persona-role"><!-- Age / role --></p>
+                </div>
+              </div>
+              <p class="case-persona-body"><!-- Needs, goals, frustrations --></p>
+            </div>
+
+            <div class="case-persona reveal" role="listitem">
+              <div class="case-persona-header">
+                <div class="case-persona-avatar" aria-hidden="true">👩</div>
+                <div>
+                  <p class="case-persona-name"><!-- Name --></p>
+                  <p class="case-persona-role"><!-- Age / role --></p>
+                </div>
+              </div>
+              <p class="case-persona-body"><!-- Needs, goals, frustrations --></p>
+            </div>
+
+          </div>
+
+          <!-- Process steps -->
+          <div class="case-steps" aria-label="Ideation process steps">
+
+            <div class="case-step reveal">
+              <div class="case-step-num" aria-hidden="true"></div>
+              <div>
+                <p class="case-step-title"><!-- Step name --></p>
+                <p class="case-step-text"><!-- What you did and why --></p>
+              </div>
+            </div>
+
+            <div class="case-step reveal">
+              <div class="case-step-num" aria-hidden="true"></div>
+              <div>
+                <p class="case-step-title"><!-- Step name --></p>
+                <p class="case-step-text"><!-- What you did and why --></p>
+              </div>
+            </div>
+
+            <div class="case-step reveal">
+              <div class="case-step-num" aria-hidden="true"></div>
+              <div>
+                <p class="case-step-title"><!-- Step name --></p>
+                <p class="case-step-text"><!-- What you did and why --></p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sketches / concept image grid -->
+          <!--
+          <div class="case-img-grid" aria-label="Ideation sketches">
+            <img src="../images/sketch-1.jpg" alt="Description" />
+            <img src="../images/sketch-2.jpg" alt="Description" />
+            <img src="../images/sketch-3.jpg" alt="Description" />
+          </div>
+          -->
+
+        </section>
+
+        <!-- ── DESIGN ────────────────────────── -->
+        <section class="case-section" id="design" aria-labelledby="design-title">
+          <p class="case-section-label" aria-hidden="true">Design</p>
+          <h2 class="case-section-title" id="design-title">The Solution</h2>
+
+          <div class="case-body">
+            <p><!-- What did you actually build/design? High-level description. --></p>
+          </div>
+
+          <!-- Full-width hero mockup -->
+          <!--
+          <img class="case-img-full" src="../images/final-design.jpg" alt="Final design screens" />
+          <p class="case-img-caption">Caption text</p>
+          -->
+
+          <!-- Feature breakdown — reuse case-two-col or case-steps -->
+          <div class="case-two-col" style="margin-top: 2rem;">
+            <div>
+              <h3><!-- Feature / decision --></h3>
+              <p><!-- Why this choice --></p>
+            </div>
+            <div>
+              <h3><!-- Feature / decision --></h3>
+              <p><!-- Why this choice --></p>
+            </div>
+          </div>
+
+          <!-- More screens grid -->
+          <!--
+          <div class="case-img-grid">
+            <img src="../images/screen-1.jpg" alt="Description" />
+            <img src="../images/screen-2.jpg" alt="Description" />
+          </div>
+          -->
+
+        </section>
+
+        <!-- ── REFLECTION ────────────────────── -->
+        <section class="case-section" id="reflection" aria-labelledby="reflection-title">
+          <p class="case-section-label" aria-hidden="true">Reflection</p>
+          <h2 class="case-section-title" id="reflection-title">What I Learned</h2>
+
+          <div class="case-body">
+            <p><!-- Key takeaways — what worked, what you'd do differently, what grew you as a designer --></p>
+            <p><!-- Second paragraph if needed --></p>
+          </div>
+
+        </section>
+
+        <!-- ── NEXT PROJECT ───────────────────── -->
+        <div class="case-next">
+          <p class="case-next-label">Next Project</p>
+          <a href="<!-- NEXT CASE URL -->" class="case-next-card" aria-label="Next project: <!-- TITLE -->">
+            <!--
+              Replace the div with a real thumbnail:
+              <img class="case-next-thumb" src="../images/next-thumb.jpg" alt="Next project thumbnail" />
+            -->
+            <div class="case-next-thumb" aria-hidden="true">[ Image ]</div>
+            <div class="case-next-info">
+              <p class="case-next-title"><!-- Next project title --></p>
+              <p class="case-next-desc"><!-- One-line description --></p>
+            </div>
+            <span class="case-next-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+      </article>
+    </div><!-- /.case-layout -->
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> <span>Beth Kent</span></p>
+    <p>UX / UI Designer</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    /* TOC active state on scroll */
+    (function () {
+      const sections = document.querySelectorAll('.case-section[id]');
+      const links    = document.querySelectorAll('.case-toc-list a');
+      if (!sections.length || !links.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const link = document.querySelector(`.case-toc-list a[href="#${entry.target.id}"]`);
+          if (link) link.classList.toggle('toc-active', entry.isIntersecting);
+        });
+      }, { rootMargin: '-20% 0px -70% 0px' });
+
+      sections.forEach(s => observer.observe(s));
+    })();
+  </script>
+
+</body>
+</html>

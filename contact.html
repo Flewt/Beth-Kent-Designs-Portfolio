@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Beth Kent</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div id="transition-overlay" aria-hidden="true"></div>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="Home">Beth<span>.</span>Kent</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">Menu</button>
+    <ul class="nav-links" id="nav-menu" role="list">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-content" id="main-content">
+    <div class="section section--narrow">
+
+      <p class="section-label">Say hello</p>
+      <h1 class="section-title">Contact</h1>
+      <div class="page-rule" aria-hidden="true">
+        <span class="rule-line"></span>
+        <span class="rule-gems">✦&nbsp;✧&nbsp;✦</span>
+        <span class="rule-line"></span>
+      </div>
+
+      <p style="color: var(--light); margin-bottom: 0; max-width: 480px;">
+        <!-- EDIT: friendly 1–2 line invite -->
+        Got a project, an opportunity, or just want to say hello? I'd love to hear from you.
+      </p>
+
+      <!--
+        FORM SETUP:
+        1. Go to formspree.io and create a free account
+        2. Create a new form — copy the form ID (looks like "xdkojqba")
+        3. Replace YOUR_FORM_ID below with it
+        e.g. action="https://formspree.io/f/xdkojqba"
+      -->
+      <form
+        class="contact-form reveal"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+        aria-label="Contact form"
+        novalidate
+      >
+        <div>
+          <label class="field-label" for="name">Name</label>
+          <input class="field-input" type="text" id="name" name="name" required autocomplete="name" placeholder="Your name" />
+        </div>
+        <div>
+          <label class="field-label" for="email">Email</label>
+          <input class="field-input" type="email" id="email" name="email" required autocomplete="email" placeholder="your@email.com" />
+        </div>
+        <div>
+          <label class="field-label" for="message">Message</label>
+          <textarea class="field-textarea" id="message" name="message" required placeholder="What's on your mind?"></textarea>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary">Send message →</button>
+        </div>
+      </form>
+
+      <div class="contact-alts reveal" aria-label="Other ways to reach me">
+        <!-- EDIT: update each href -->
+        <a href="https://linkedin.com/in/YOURHANDLE" class="contact-alt-link" target="_blank" rel="noopener noreferrer">↗ LinkedIn</a>
+        <a href="https://dribbble.com/YOURHANDLE" class="contact-alt-link" target="_blank" rel="noopener noreferrer">↗ Dribbble</a>
+        <a href="mailto:you@email.com" class="contact-alt-link">✉ Email me</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> <span>Beth Kent</span></p>
+    <p>UX / UI Designer</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

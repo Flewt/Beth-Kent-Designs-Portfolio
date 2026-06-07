@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beth Kent — UX/UI Designer</title>
+  <meta name="description" content="UX/UI Designer portfolio — Beth Kent." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Landing-specific: no nav, full viewport */
+    body.landing { cursor: pointer; user-select: none; }
+  </style>
+</head>
+<body class="landing" id="landing-body" role="main" aria-label="Click to enter portfolio">
+
+  <!-- Transition overlay -->
+  <div id="transition-overlay" aria-hidden="true"></div>
+
+  <div class="landing-logo-wrap" id="logo-wrap">
+    <div class="logo-mark">
+      BETH<span style="color:#FF6B6B;">.</span>KENT
+    </div>
+    <p class="logo-sub" style="color:#D0B6D0;">UX / UI Designer</p>
+  </div>
+
+  <p class="landing-hint" aria-hidden="true">Click anywhere to enter</p>
+
+  <script>
+    const body   = document.getElementById('landing-body');
+    const logo   = document.getElementById('logo-wrap');
+    const hint   = document.querySelector('.landing-hint');
+    const overlay = document.getElementById('transition-overlay');
+    let triggered = false;
+
+    function enterSite() {
+      if (triggered) return;
+      triggered = true;
+
+      // Stop the breathing animation
+      logo.style.animation = 'none';
+
+      // Zoom the logo out (scale down to nothing)
+      logo.classList.add('zoom-out');
+      hint.style.opacity = '0';
+
+      // After zoom, flash overlay then navigate
+      setTimeout(() => {
+        overlay.classList.add('flash');
+        setTimeout(() => {
+          window.location.href = 'home.html';
+        }, 250);
+      }, 500);
+    }
+
+    body.addEventListener('click', enterSite);
+
+    // Also allow keyboard: Enter or Space
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') enterSite();
+    });
+  </script>
+</body>
+</html>
