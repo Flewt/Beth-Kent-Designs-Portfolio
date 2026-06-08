@@ -3,61 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Beth Kent — UX/UI Designer</title>
+  <title>Beth Kent Design</title>
   <meta name="description" content="UX/UI Designer portfolio — Beth Kent." />
   <link rel="stylesheet" href="css/style.css" />
-  <style>
-    /* Landing-specific: no nav, full viewport */
-    body.landing { cursor: pointer; user-select: none; }
-  </style>
 </head>
-<body class="landing" id="landing-body" role="main" aria-label="Click to enter portfolio">
+<body class="landing" id="landing-body">
 
-  <!-- Transition overlay -->
   <div id="transition-overlay" aria-hidden="true"></div>
 
-  <div class="landing-logo-wrap" id="logo-wrap">
-    <div class="logo-mark">
-      BETH<span style="color:#FF6B6B;">.</span>KENT
-    </div>
-    <p class="logo-sub" style="color:#D0B6D0;">UX / UI Designer</p>
-  </div>
+  <button class="paw-btn" id="paw-btn" aria-label="Enter portfolio">
+    <svg class="paw-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Toe pads -->
+      <ellipse cx="25" cy="28" rx="10" ry="12" />
+      <ellipse cx="45" cy="18" rx="10" ry="12" />
+      <ellipse cx="65" cy="18" rx="10" ry="12" />
+      <ellipse cx="80" cy="28" rx="10" ry="12" />
+      <!-- Main pad -->
+      <path d="M18,52 Q14,72 28,82 Q42,92 50,92 Q58,92 72,82 Q86,72 82,52 Q78,38 62,36 Q50,34 38,36 Q22,38 18,52 Z" />
+    </svg>
+    <span class="paw-label">click here</span>
+  </button>
 
-  <p class="landing-hint" aria-hidden="true">Click anywhere to enter</p>
-
+  <script src="js/main.js"></script>
   <script>
-    const body   = document.getElementById('landing-body');
-    const logo   = document.getElementById('logo-wrap');
-    const hint   = document.querySelector('.landing-hint');
-    const overlay = document.getElementById('transition-overlay');
-    let triggered = false;
+    var btn     = document.getElementById('paw-btn');
+    var overlay = document.getElementById('transition-overlay');
+    var triggered = false;
 
-    function enterSite() {
+    function enter() {
       if (triggered) return;
       triggered = true;
-
-      // Stop the breathing animation
-      logo.style.animation = 'none';
-
-      // Zoom the logo out (scale down to nothing)
-      logo.classList.add('zoom-out');
-      hint.style.opacity = '0';
-
-      // After zoom, flash overlay then navigate
-      setTimeout(() => {
+      btn.classList.add('zooming');
+      setTimeout(function () {
         overlay.classList.add('flash');
-        setTimeout(() => {
+        setTimeout(function () {
           window.location.href = 'home.html';
-        }, 250);
-      }, 500);
+        }, 220);
+      }, 420);
     }
 
-    body.addEventListener('click', enterSite);
-
-    // Also allow keyboard: Enter or Space
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') enterSite();
+    btn.addEventListener('click', enter);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') enter();
     });
   </script>
+
 </body>
 </html>
