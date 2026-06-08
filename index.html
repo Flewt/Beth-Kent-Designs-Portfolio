@@ -46,6 +46,16 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') enter();
     });
+
+    // When navigating back the browser restores the page from bfcache with
+    // the paw still zoomed and invisible. Reset it so the page looks normal.
+    window.addEventListener('pageshow', function (e) {
+      if (e.persisted) {
+        triggered = false;
+        btn.classList.remove('zooming');
+        overlay.classList.remove('flash');
+      }
+    });
   </script>
 
 </body>
