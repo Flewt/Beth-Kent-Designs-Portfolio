@@ -13,7 +13,7 @@
 
 /* ── STAGE — full viewport below nav ─────────── */
 .home-stage {
-  height: calc(100vh - 68px);
+  height: calc(100vh - var(--nav-h));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -367,13 +367,60 @@
    RESPONSIVE
 ══════════════════════════════════════════════ */
 
-/* Show HUD panels only when there's enough horizontal room */
+/* ── 2K / LARGE SCREENS (≥ 1600px) ─────────── */
+@media (min-width: 1600px) {
+  /* Scale title up for big displays */
+  .title-first,
+  .title-last { font-size: clamp(200px, 13vw, 320px); }
+
+  /* Bigger tagline + menu on large screens */
+  .home-tagline { font-size: clamp(20px, 1.5vw, 26px); max-width: 580px; }
+  .home-menu-item { font-size: clamp(18px, 1.6vw, 26px); }
+
+  /* Keep HUDs positioned relative to a virtual center container */
+  .hud-panel { min-width: 220px; padding: 2rem 2.25rem; }
+  .hud-panel--left  { left:  clamp(2rem, calc(50% - 680px), 7rem); }
+  .hud-panel--right { right: clamp(2rem, calc(50% - 680px), 7rem); }
+
+  .home-stage { height: calc(100vh - var(--nav-h)); }
+}
+
+/* ── SHOW HUD PANELS ─────────────────────────── */
+/* At 1280px the central frame (~600px) + 2 × HUDs (190px each) + margins fits */
 @media (min-width: 1280px) {
   .hud-panel { display: block; }
 }
 
+/* ── TABLET LANDSCAPE (1025–1279px) ─────────── */
+/* HUDs hidden, title can breathe at intermediate sizes */
+@media (max-width: 1279px) and (min-width: 1025px) {
+  .title-first,
+  .title-last { font-size: clamp(76px, 13vw, 160px); }
+
+  .home-tagline { font-size: clamp(15px, 1.8vw, 20px); }
+}
+
+/* ── TABLET PORTRAIT (769–1024px) ───────────── */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .title-first,
+  .title-last { font-size: clamp(76px, 14vw, 140px); }
+
+  .home-tagline { font-size: 16px; max-width: 420px; }
+  .home-menu { max-width: 300px; }
+  .home-menu-item { font-size: 16px; }
+}
+
+/* ── MOBILE (≤ 768px) ───────────────────────── */
 @media (max-width: 768px) {
-  .home-stage { height: calc(100vh - 68px); }
+  .home-stage { height: calc(100vh - var(--nav-h)); }
+
+  .title-first,
+  .title-last { font-size: clamp(64px, 18vw, 120px); }
+
+  .home-tagline { font-size: 15px; max-width: 340px; }
+
+  .home-menu { max-width: 280px; }
+  .home-menu-item { font-size: 15px; padding: 0.75rem 1.25rem; }
 
   .corner--tl { top: 12px;    left: 12px; }
   .corner--tr { top: 12px;    right: 12px; }
@@ -383,7 +430,29 @@
   .home-hint { display: none; }
 }
 
-/* Reduce motion */
+/* ── SMALL MOBILE (≤ 480px) ─────────────────── */
+@media (max-width: 480px) {
+  .home-stage { height: calc(100vh - 60px); } /* matches shorter nav */
+
+  .title-first,
+  .title-last { font-size: clamp(52px, 17vw, 80px); }
+
+  .home-eyebrow { font-size: 10px; letter-spacing: 0.2em; }
+  .home-tagline { font-size: 14px; max-width: 280px; }
+  .home-rule { max-width: 260px; }
+
+  .home-menu { max-width: 240px; gap: 0; }
+  .home-menu-item { font-size: 14px; padding: 0.65rem 1rem; letter-spacing: 0.08em; }
+
+  /* Corners eat too much space on small screens */
+  .corner { width: 28px; height: 28px; }
+  .corner--tl { top: 8px;  left: 8px; }
+  .corner--tr { top: 8px;  right: 8px; }
+  .corner--bl { bottom: 8px; left: 8px; }
+  .corner--br { bottom: 8px; right: 8px; }
+}
+
+/* ── REDUCE MOTION ───────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .home-title,
   .title-dot,
